@@ -1,0 +1,50 @@
+
+/* @import "~bootstrap/dist/css/bootstrap.css"; */
+
+
+.navbar-custom {
+    background-color: #034b94; 
+    height: 80px; 
+    border-bottom: 8px solid #ffee05; 
+  }
+  
+  .navbar-custom .navbar-brand,
+  .navbar-custom .nav-link {
+    color: #fff; 
+    font-family: Arial, sans-serif; 
+    padding-left: 20px; 
+    padding-right: 20px; 
+    
+  }
+  
+  .navbar-custom .nav-item {
+    margin-right: 40px; 
+  }
+  
+  .navbar-custom .nav-item.active {
+    background-color: #ff9900; 
+  }
+  
+  .navbar-custom .nav-item.active .nav-link {
+    color: #001f3f; 
+  }
+  
+  .navbar-custom .nav-item:hover {
+    background-color: #a9aaad94; 
+  }
+  
+  .navbar-custom .nav-item:hover .nav-link {
+    color: #fff; 
+  }
+  
+  
+  .navbar-custom .first-item {
+    margin-left: 30px; 
+  }
+  
+  .navbar-text{
+  
+  color:whitesmoke;
+  
+  }
+  

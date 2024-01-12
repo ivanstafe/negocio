@@ -1,0 +1,59 @@
+<div class="container">
+    <div class="table-container">
+      <br>
+      <h1>Datos de Ventas:</h1>
+      <br>
+  
+      <table>
+        <thead>
+          <tr>
+            <th>Mes</th>
+            <th *ngFor="let sucursal of sucursales">{{ sucursal }}</th>
+          </tr>
+        </thead>
+        <tbody>
+          <ng-container *ngFor="let mes of meses; let i = index">
+            <tr>
+              <td>{{ mes }}</td>
+              <td>
+                <input
+                  type="text"
+                  [(ngModel)]="ventasData[i].sucursal1"
+                  (keydown)="onEnter($event, i, 'sucursal1')"
+                >
+              </td>
+              <td>
+                <input
+                  type="text"
+                  [(ngModel)]="ventasData[i].sucursal2"
+                  (keydown)="onEnter($event, i, 'sucursal2')"
+                >
+              </td>
+              <td>
+                <input
+                  type="text"
+                  [(ngModel)]="ventasData[i].sucursal3"
+                  (keydown)="onEnter($event, i, 'sucursal3')"
+                >
+              </td>
+              <td>
+                <input
+                  type="text"
+                  [(ngModel)]="ventasData[i].sucursal4"
+                  (keydown)="onEnter($event, i, 'sucursal4')"
+                >
+              </td>
+              <td>
+                <input
+                  type="text"
+                  [(ngModel)]="ventasData[i].sucursal5"
+                  (keydown)="onEnter($event, i, 'sucursal5')"
+                >
+              </td>
+            </tr>
+          </ng-container>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  

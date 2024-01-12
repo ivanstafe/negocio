@@ -1,0 +1,35 @@
+<div class="container">
+  <div class="table-container">
+    <br>
+    <h1>Datos de Ventas:</h1>
+    <br>
+    
+    <table>
+      <thead>
+        <tr>
+          <th>Mes</th>
+          <th *ngFor="let sucursal of sucursales">{{ sucursal }}</th>
+        </tr>
+      </thead>
+      <tbody>
+        <ng-container *ngFor="let mes of meses; let i = index">
+          <tr>
+            <td>{{ mes }}</td>
+            <td>{{ ventasData[i].sucursal1 }}</td>
+            <td>{{ ventasData[i].sucursal2 }}</td>
+            <td>{{ ventasData[i].sucursal3 }}</td>
+            <td>{{ ventasData[i].sucursal4 }}</td>
+            <td>{{ ventasData[i].sucursal5 }}</td>
+          </tr>
+        </ng-container>
+      </tbody>
+    </table>
+  </div>
+  <div class="chart-container">
+    <div id="contenedor">
+      <div [innerHtml]="svgContent"></div>
+    </div>
+    
+  </div>
+</div>
+

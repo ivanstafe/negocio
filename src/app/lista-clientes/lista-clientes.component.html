@@ -1,0 +1,86 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tu Título</title>
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css">
+
+</head>
+<body>
+  <br>
+    <div class="container">
+        <h1>{{ titulo }}</h1>
+      <br>
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="card p-2">
+                    <p>
+                        Nombre <input type="text" class="form-control m-1" [(ngModel)]="clientes.nombre" placeholder="Nombre">
+                    </p>
+                    <p>
+                        Apellido <input type="text" class="form-control m-1" [(ngModel)]="clientes.apellido" placeholder="Apellido">
+                    </p>
+                    <p>
+                        Correo <input type="email" class="form-control m-1" [(ngModel)]="clientes.correo" placeholder="Correo">
+                    </p>
+                    <p>
+                        Numero <input maxlength="13" type="tel" class="form-control m-1" [(ngModel)]="clientes.numero" placeholder="Número">
+                    </p>
+                <div class="row">
+                    <div class="col">
+                        <button class="btn btn-success" (click)="Agregar()">Registrar</button>&nbsp;
+                        <button class="btn btn-primary" (click)="Modificar()">Actualizar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+            <div class="col-sm-6">
+                <div class="card p-2">
+                    <div class="table-responsive">
+                      <table class="table table-bordered">
+                        <thead class="thead-dark">
+                            <tr>
+                                <th class="text-center">IdCliente</th>
+                                <th class="text-center">Nombre</th>
+                                <th class="text-center">Apellido</th>
+                                <th class="text-center">Correo</th>
+                                <th class="text-center">Numero</th>
+                                <th class="text-center">Borrar</th>
+                                <th class="text-center">Seleccionar</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let cliente of cliente">
+                                <td class="text-center">{{ cliente.id_cliente }}</td>
+                                <td class="text-center">{{ cliente.nombre }}</td>
+                                <td class="text-center">{{ cliente.apellido }}</td>
+                                <td class="text-center">{{ cliente.correo }}</td>
+                                <td class="text-center">{{ cliente.numero }}</td>
+                                <td class="text-center">
+                                    <button class="btn btn-danger text-white" (click)="Eliminar(cliente.id_cliente)">
+                                        <i class="fas fa-trash"></i> 
+                                    </button>
+                                </td>
+                                <td class="text-center">
+                                    <button class="btn btn-warning text-white" (click)="Seleccionar(cliente.id_cliente)">
+                                        <i class="fas fa-edit"></i> 
+                                    </button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    
+                    
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
